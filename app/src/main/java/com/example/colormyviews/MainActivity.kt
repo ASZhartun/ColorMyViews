@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.colormyviews.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
             binding.boxTwoText,
             binding.boxThreeText,
             binding.boxFourText,
-            binding.boxFiveText, binding.constraintLayout
+            binding.boxFiveText,
+            binding.constraintLayout,
+            binding.buttonRed,
+            binding.buttonGreen,
+            binding.buttonBlue
         )
 
         for (item in clickableViews) {
@@ -32,13 +36,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun makeColored (view : View) {
-        when(view.id) {
+    private fun makeColored(view: View) {
+        when (view.id) {
             R.id.box_one_text -> view.setBackgroundColor(Color.CYAN)
             R.id.box_two_text -> view.setBackgroundColor(Color.GREEN)
             R.id.box_three_text -> view.setBackgroundResource(android.R.color.holo_red_dark)
             R.id.box_four_text -> view.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
+            R.id.button_red -> binding.boxFiveText.setBackgroundColor(Color.GREEN)
+            R.id.button_blue -> binding.boxFourText.setBackgroundColor(Color.RED)
+            R.id.button_green -> binding.boxThreeText.setBackgroundColor(Color.BLUE)
             else -> view.setBackgroundColor(Color.BLACK)
         }
     }
