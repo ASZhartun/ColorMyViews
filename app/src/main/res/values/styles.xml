@@ -2,7 +2,7 @@
 <resources>
 
     <style name="BoxStyle">
-        <item name="android:background">#FF4646</item>
+        <item name="android:background">@color/white</item>
         <item name="android:fontFamily">monospace</item>
         <item name="android:padding">@dimen/margin_half</item>
         <item name="android:textAlignment">center</item>
